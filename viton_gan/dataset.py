@@ -66,7 +66,7 @@ class DatasetBase(Dataset):
         """
         with open(os.path.join(self.data_path, 'pose', pose_name), 'r') as f:
             pose_label = json.load(f)
-            pose_data = pose_label['people'][0]['pose_keypoints_2d']
+            pose_data = pose_label['people'][0]['pose_keypoints']
             pose_data = np.array(pose_data)
             pose_data = pose_data.reshape((-1,3))
         point_num = pose_data.shape[0]
